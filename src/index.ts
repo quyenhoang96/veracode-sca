@@ -175,7 +175,7 @@ const createIssueDetails = (vuln: SCAVulnerability,lib: SCALibrary): ReportedLib
     const sevLabel = getSeverityName(vuln.cvssScore);
     const myCVE = vuln.cve || '0000-0000';
     const versionsFound = lib.versions.map(version => version.version);
-    var title = "CVE: "+myCVE+" found in "+lib.name+" - Version: "+versionsFound+" ["+vuln.language+"]";
+    var title = "[GCKit]CVE: "+myCVE+" found in "+lib.name+" - Version: "+versionsFound+" ["+vuln.language+"]";
     var labels: Array<Label> = [VERACODE_LABEL,sevLabel];
     var description = "Veracode Software Composition Analysis"+
         "  \n===============================\n"+
