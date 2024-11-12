@@ -33,26 +33,28 @@ inputs:
     description: "Run the SRCCLR in debug mode"
     required: false
     default: "false"
-  skip-collectors:
-    description: "Run the SRCCLR with the `--skip-collectors` options"
-    required: false
-    default: "false"
-  allow-dirty:
-    description: "Run the SRCCLR with the `--allow-dirty` option"
-    required: false
-    default: "false"
-  recursive:
-    description: "Run the SRCCLR with the `--recursive` option"
-    required: false
-    default: "false"
-  skip-vms:
-    description: "Run the SRCCLR with the `--skip-vms` option"
-    required: false
-    default: "false"
-  no-graphs:
-    description: "Run the SRCCLR with the `--no-graphs` option"
-    required: false
-    default: "false"
+  app_guid:
+    description: "The GUID of the application in Veracode"
+    required: true
+    default: ""
+  vid:
+    description: "The version ID of the application in Veracode"
+    required: true
+    default: ""
+  vkey:
+    description: "The version key of the application in Veracode"
+    required: true
+    default: ""
+  ower:
+    description: "The owner of the application in Veracode"
+    required: true
+    default: ""
+  repo:
+    description: "The repository name"
+    required: true
+    default: ""
+    
+  
 runs:
   using: 'node20'
   main: 'dist/index.js'

@@ -63,3 +63,8 @@ export interface ReportedLibraryIssue {
     description: string,
     labels: Array<Label> 
 }
+
+export interface Issue {
+    title: string,
+    number: number
+}

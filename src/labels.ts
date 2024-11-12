@@ -44,7 +44,8 @@ export const SEVERITY_LABELS = {
 
 
 export const VERACODE_LABEL: Label = {
-    'name': 'Veracode Dependency Scanning',
+    'name': 'Veracode',
     'color': '0AA2DC',
-    'description': 'A Veracode identified vulnerability'
+    'description': 'Veracode'
 }
+

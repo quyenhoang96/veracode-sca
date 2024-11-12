@@ -6,6 +6,7 @@
   "scripts": {
     "test-gql": "tsc && NODE_ENV=test node -r dotenv/config ./dist/test/graphql.js",
     "test-url": "tsc && NODE_ENV=test node -r dotenv/config ./dist/test/testRun.js",
+    "start": "npm run clean && tsc && NODE_ENV=test node -r dotenv/config ./dist/action.js",
     "clean": "rm -rf ./dist/ || true",
     "build": "npm run clean && ncc build ./src/action.ts --license license"
   },
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/veracode/veracode-sca#readme",
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^16.18.98",
     "@vercel/ncc": "^0.33.0",
     "dotenv": "^15.0.0",
@@ -33,6 +35,10 @@
   "dependencies": {
     "@actions/artifact": "^2.1.4",
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^5.0.0",
+    "axios": "^1.7.7",
+    "crypto-js": "^4.2.0",
+    "octokit": "^4.0.2",
+    "request": "^2.88.2"
   }
 }

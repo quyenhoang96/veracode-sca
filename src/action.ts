@@ -5,21 +5,18 @@ import { Options } from "./options";
 import {runAction} from './srcclr';
 
 const options: Options = {
-    quick: core.getBooleanInput('quick'),
-    updateAdvisor: core.getBooleanInput('update_advisor'),
+    updateAdvisor: true,
     minCVSSForIssue: parseFloat(core.getInput('min-cvss-for-issue')) || 0,
     url: core.getInput('url'),
     github_token: core.getInput('github_token',{required:true}),
-    createIssues: core.getBooleanInput('create-issues'),
-    allowDirty: core.getBooleanInput('allow-dirty'),
-    failOnCVSS: parseFloat(core.getInput('fail-on-cvss')) || 10,
+    createIssues: true,
     path: core.getInput('path',{trimWhitespace: true}) || '.',
-    debug: core.getBooleanInput('debug'),
-    "skip-vms": core.getBooleanInput('skip-vms'),
-    "no-graphs": core.getBooleanInput('no-graphs'),
-    recursive: core.getBooleanInput('recursive'),
-    "skip-collectors": core.getInput('skip-collectors').split(',')
-    
+    debug: true,
+    app_guid: core.getInput('app_guid',{required:true}),
+    vid: core.getInput('vid',{required:true}),
+    vkey: core.getInput('vkey',{required:true}),
+    repo: core.getInput('repo',{required:true}),
+    owner: core.getInput('owner',{required:true}),
 }
 
 runAction(options);
