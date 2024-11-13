@@ -138,6 +138,10 @@ const fetchStaticFindings = async (app_guid: string, vid: string, vkey: string) 
 
         const data = await response.json();
 
+        if (!data._embedded) {
+            return []
+        }
+
         return data._embedded.findings;
     } catch (error) {
         console.error('Fetch error:', error);
